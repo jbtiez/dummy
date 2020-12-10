@@ -25,7 +25,7 @@ font-family: Roboto, Lato, Arial, sans-serif;
 
 }
 #SOCO1_agg_tooltip {
-position: absolute;
+position: fixed;
 width: 220px;
 visibility: hidden;
 font-size: 13px;
@@ -850,10 +850,10 @@ function SOCO1_highlight_cum(d){
     console.log(SOCO1_viewport)
     var SOCO1_rect = d3.select(this)
     .style("opacity",0);
-	var SOCO1_top = SOCO1_rect.node().getBoundingClientRect().top;
+    var SOCO1_top = SOCO1_rect.node().getBoundingClientRect().top + SOCO1_rect.node().getBoundingClientRect().height;
 
      d3.select("#SOCO1_agg_tooltip") // have tooltip appear
-       .style("top",SOCO1_top + 50 + "px")      
+       .style("top",SOCO1_top + 10 + "px")      
     .style("left",function() {
          if(+d3.event.pageX / SOCO1_viewport > .7) {
              val = +d3.event.pageX + -60 + "px"
