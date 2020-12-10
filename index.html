@@ -851,10 +851,8 @@ function SOCO1_highlight_cum(d){
     var SOCO1_rect = d3.select(this)
     .style("opacity",.6);
 	
-    var offset_rect = SOCO1_rect.offsetTop; 
-
      d3.select("#SOCO1_agg_tooltip") // have tooltip appear
-       .style("top",+d3.event.pageY - offset_rect + 10 + "px")      
+       .style("top",+d3.event.pageY + 10 + "px")      
     .style("left",function() {
          if(+d3.event.pageX / SOCO1_viewport > .7) {
              val = +d3.event.pageX + -60 + "px"
