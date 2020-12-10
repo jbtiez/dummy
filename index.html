@@ -849,10 +849,11 @@ function SOCO1_highlight_cum(d){
     var SOCO1_viewport = d3.select('#SOCO1_container').style('width').slice(0, -2)
     console.log(SOCO1_viewport)
     var SOCO1_rect = d3.select(this)
-    .style("opacity",.6);
-	
+    .style("opacity",0);
+	var SOCO1_top = SOCO1_rect.node().getBoundingClientRect().top;
+
      d3.select("#SOCO1_agg_tooltip") // have tooltip appear
-       .style("top",+d3.event.pageY + 10 + "px")      
+       .style("top",SOCO1_top + 50 + "px")      
     .style("left",function() {
          if(+d3.event.pageX / SOCO1_viewport > .7) {
              val = +d3.event.pageX + -60 + "px"
