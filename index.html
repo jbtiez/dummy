@@ -852,13 +852,13 @@ function SOCO1_highlight_cum(d){
     .style("opacity",0);
 
      d3.select("#SOCO1_agg_tooltip") // have tooltip appear
-       .style("top",+d3.event.pageY + 10 + "px") //client x and client y are based on the browser's position         
+       .style("top",+d3.event.pageY + 10 + "px")      
     .style("left",function() {
          if(+d3.event.pageX / SOCO1_viewport > .7) {
              val = +d3.event.pageX + -60 + "px"
          } else {
              val = +d3.event.pageX + 5 + "px"
-     }})
+     } return val})
     .style("visibility","visible");
     d3.select("#SOCO1_statename").text(function() { return d["State_Name"]
     });
@@ -896,6 +896,7 @@ function SOCO1_highlight_cum(d){
         console.log(elapsed);
         if (elapsed > 500) {t.stop(); SOCO1_unhighlight_cum(); 
         }}, 12000);}
+	console.log(d3.event.pageY)
 
 }
 //mouseout for state blocks
