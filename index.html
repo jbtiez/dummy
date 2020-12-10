@@ -852,12 +852,12 @@ function SOCO1_highlight_cum(d){
     .style("opacity",0);
 
      d3.select("#SOCO1_agg_tooltip") // have tooltip appear
-    .style("top",+d3.event.pageY - window.scrollY  + 10 + "px") //client x and client y are based on the browser's position         
+    .style("top",d3.event.pageY  + 10 + "px") //client x and client y are based on the browser's position         
     .style("left",function() {
          if(+d3.event.pageX / SOCO1_viewport > .7) {
-             val = +d3.event.pageX + -60 + "px"
+             val = d3.event.pageX + -60 + "px"
          } else {
-             val = +d3.event.pageX + 5 + "px"
+             val = d3.event.pageX + 5 + "px"
          } 
          return val;
      })
