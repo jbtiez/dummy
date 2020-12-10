@@ -858,7 +858,7 @@ function SOCO1_highlight_cum(d){
              val = +d3.event.pageX + -60 + "px"
          } else {
              val = +d3.event.clientX + 5 + "px"
-     })
+     }})
     .style("visibility","visible");
     d3.select("#SOCO1_statename").text(function() { return d["State_Name"]
     });
